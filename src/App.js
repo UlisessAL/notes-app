@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import NavBar from './components/NavBar/NavBar';
+import NoteDetailContainer from './components/NoteDetailContainer/NoteDetailContainer';
+import NoteContainer from './components/NoteListContainer/NoteContainer';
+import { exportArray } from './services/Firebase';
+
+const subir = () => {
+  exportArray()
+  console.log("subido");
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app-dark'>
+      <BrowserRouter>
+        <button onClick={subir}>Click</button>
+        <NavBar/>
+            <Routes>
+
+              <Route path="/"  element={<NoteContainer/>}/>
+
+              <Route path="/note/:id"  element={<NoteDetailContainer/>}/>
+              
+              <Route path="/category/:categoryId"  element={<NoteContainer/>}/>
+
+            </Routes>
+        </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,9 @@
+.note-back{
+    display: flex;
+    justify-content: center;
+}
+
+.note-detail{
+    margin-top: 200px;
+    width: 700px;
+}
