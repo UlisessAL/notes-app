@@ -1,3 +1,26 @@
 .note-cont{
     padding-top: 200px;
 }
+
+.hour-div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 100px;
+    font-family: 'Anton', sans-serif;
+}
+
+.category-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: rgb(225, 215, 215);
+    font-family: 'Anton', sans-serif;
+    color: rgb(65, 63, 63);
+}
+
+.title-note-list{
+    font-family: 'Anton', sans-serif;
+}

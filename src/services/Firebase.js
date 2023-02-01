@@ -62,4 +62,8 @@ export async function exportArray(){
 
 }
 
+export async function exportOneNote(note){
+  addDoc(collection(db, "notes"), note)
+}
+
 export default db;

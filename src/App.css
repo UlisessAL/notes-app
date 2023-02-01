@@ -6,3 +6,33 @@
   color: white;
 }
 
+.formulary-note{
+  width: 500px;
+  background-color: rgb(65, 63, 63);
+  margin-top: 50px;
+  color: white;
+}
+
+#button-formulary:disabled{
+  background-color: grey;
+}
+
+.container-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-form h2{
+  margin-top: 200px;
+  color: white;
+}
+
+#category-info{
+  color: rgb(190, 188, 188);
+}
+
+#butto-note{
+  margin-bottom: 10px;
+}

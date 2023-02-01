@@ -4,27 +4,29 @@ const NoteDetail = (props) => {
     const cardStyle = {
         backgroundColor:"grey",
     }
+    const spanStyle = {
+        color:"white"
+    }
 
-  return (
+    return (
     <div>
 
         <div className="card text-center" style={cardStyle}>
             <div className="card-header">
-                {category}
+            <h5 className="card-title">{title}</h5>
             </div>
         <div className="card-body">
-            <h5 className="card-title">{title}</h5>
 
         {imgs !== undefined && <img src={imgs} className="card-img-top" alt={imgs}/>}
 
-            <p className="card-text">{info}</p>
+            <p className="card-text">Information: <br /> {info}</p>
         </div>
             <div className="card-footer text-muted">
-                2 days ago
+            <span style={spanStyle}> Category: {category}</span>
             </div>
         </div>
 
     </div>
-  )
+    )
 }
 export default NoteDetail
