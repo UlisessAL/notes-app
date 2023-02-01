@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {addDoc, collection, doc, getDoc, getDocs,  getFirestore,  query, where} from "firebase/firestore"
+import "firebase/compat/auth"
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYGHeAj4QnMpShFHxlMBZ4AoRMs3iHhWU",
@@ -67,3 +68,5 @@ export async function exportOneNote(note){
 }
 
 export default db;
+
+export {app}
