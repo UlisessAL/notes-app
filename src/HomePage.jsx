@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import LoadFailPage from './components/error404/LoadFailPage';
 import NavBar from './components/NavBar/NavBar';
 import NoteDetailContainer from './components/NoteDetailContainer/NoteDetailContainer';
 import NoteContainer from './components/NoteListContainer/NoteContainer';
@@ -24,6 +25,8 @@ const HomePage = (props) => {
                 <Route path="/category/:categoryId"  element={<NoteContainer/>}/>
 
                 <Route path="/newNote"  element={<PushNoteContainer/>}/>
+
+                <Route path="*"  element={<LoadFailPage/>}/>
 
                 </Routes>
             </BrowserRouter>

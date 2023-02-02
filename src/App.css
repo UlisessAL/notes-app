@@ -75,3 +75,12 @@
   font-family: 'Anton', sans-serif;
   color: white;
 }
+
+.container-manga{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 200px;
+}
