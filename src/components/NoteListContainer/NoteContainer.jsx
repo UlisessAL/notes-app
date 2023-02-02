@@ -30,8 +30,6 @@ const NoteContainer = () => {
         let hour = now.getHours()
         let minutes = now.getMinutes()
 
-        
-
         let hourLocal;
 
         return hourLocal = hour + ":" + minutes

@@ -8,9 +8,9 @@ export const authContext = createContext();
 
 export const useAuthContext = () => {
     const context = useContext(authContext)
-    if (!context) {
-        console.log("error creating auth context");
-    }
+    // if (!context) {
+    //     console.log("error creating auth context");
+    // }
     return context;
 };
 
@@ -20,7 +20,7 @@ export function AuthProvider({children}){
     useEffect(() => {
         const suscribed = onAuthStateChanged(auth, (currentUser) => {
             if (!currentUser) {
-                console.log("no hay usuario");
+                // console.log("no hay usuario");
                 setUser("")
             }else{
                 setUser(currentUser)

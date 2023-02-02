@@ -4,16 +4,16 @@ import NoteDetailContainer from './components/NoteDetailContainer/NoteDetailCont
 import NoteContainer from './components/NoteListContainer/NoteContainer';
 import PushNoteContainer from './components/PushNote/PushNoteContainer';
 import {exportArray } from './services/Firebase';
-const subir = () => {
-    exportArray()
-    console.log("subido");
-}
+// const subir = () => {
+//     exportArray()
+//     console.log("subido");
+// }
 
 const HomePage = (props) => {
     return (
         <div className='app-dark'>
         <BrowserRouter>
-            <button onClick={subir}>Click</button>
+            {/* <button onClick={subir}>Click</button> */}
             <NavBar handleLogOut={props.handleLogOut} />
                 <Routes>
 
