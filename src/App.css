@@ -7,7 +7,7 @@
 }
 
 .formulary-note{
-  width: 500px;
+  max-width: 500px;
   background-color: rgb(65, 63, 63);
   margin-top: 50px;
   color: white;
