@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {addDoc, collection, doc, getDoc, getDocs,  getFirestore,  query, where} from "firebase/firestore"
-import "firebase/compat/auth"
+import {getAuth} from "firebase/auth"
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYGHeAj4QnMpShFHxlMBZ4AoRMs3iHhWU",
@@ -11,9 +11,13 @@ const firebaseConfig = {
   appId: "1:1054454370671:web:5d6d0734c3ae69ac5cd89a"
 };
 
+
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 const notesRef = collection(db, "notes")
+export const auth = getAuth(app)
+console.log(auth, "este log");
 
 export async function getNotes(){
   const snapshot = await getDocs(notesRef)
