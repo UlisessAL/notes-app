@@ -1,10 +1,6 @@
-import './App.css';
 import Log from './components/Log/Log';
-import { AuthProvider } from './context/AuthContext';
-import HomePage from './HomePage';
-
-
-
+import {  AuthProvider } from './context/AuthContext';
+import "./App.css"
 
 
 
@@ -12,7 +8,6 @@ function App() {
 
   return (
     <AuthProvider>
-      {/* <HomePage/>  */}
       <Log/>
     </AuthProvider>
   );

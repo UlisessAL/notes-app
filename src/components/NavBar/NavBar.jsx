@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
-const NavBar = () => {
+const NavBar = (props) => {
+
 
     return (
         <div>
@@ -22,6 +23,7 @@ const NavBar = () => {
                         <Link to="/category/others" className="nav-link active" >Others</Link>
                         </li>
                     </ul>
+                    <button onClick={() => props.handleLogOut()}>Log Out</button>
                     </div>
                 </div>
             </nav>

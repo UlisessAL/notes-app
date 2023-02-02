@@ -9,12 +9,12 @@ const subir = () => {
     console.log("subido");
 }
 
-const HomePage = () => {
+const HomePage = (props) => {
     return (
         <div className='app-dark'>
         <BrowserRouter>
             <button onClick={subir}>Click</button>
-            <NavBar/>
+            <NavBar handleLogOut={props.handleLogOut} />
                 <Routes>
 
                 <Route path="/"  element={<NoteContainer/>}/>

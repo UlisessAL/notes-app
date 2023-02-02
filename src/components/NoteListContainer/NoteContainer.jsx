@@ -9,14 +9,12 @@ const NoteContainer = () => {
 
     const [notes, setNotes] = useState([]),
     {categoryId} = useParams()
-    console.log(categoryId);
 
     useEffect(() => {
 
         if (!categoryId) {
             getNotes().then((res) => {
                 setNotes(res)
-                console.log(notes);
             })
         } else {
             getNoteByCategory(categoryId).then((res) => {

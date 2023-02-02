@@ -69,3 +69,9 @@
 .btn_form{
   margin-bottom: 10px;
 }
+
+.title-form{
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  color: white;
+}
