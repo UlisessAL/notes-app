@@ -36,3 +36,42 @@
 #butto-note{
   margin-bottom: 10px;
 }
+
+.cont-form{
+  display: flex;
+  justify-content: center;
+}
+
+.div-form{
+  margin-top: 200px;
+
+}
+
+.formu{
+  display: flex;
+  flex-direction: column;
+}
+
+.formu-div{
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.label_form{
+  color: white;
+}
+
+.input_label{
+  border-radius: 5px;
+}
+
+.btn_form{
+  margin-bottom: 10px;
+}
+
+.title-form{
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  color: white;
+}

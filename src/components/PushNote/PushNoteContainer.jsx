@@ -21,8 +21,6 @@ const PushNoteContainer = () => {
         setNote(newState);
     }
 
-    console.log(note);
-
     const submitForm = (evt) => {
         evt.preventDefault()
         exportOneNote(note)
@@ -36,23 +34,22 @@ const PushNoteContainer = () => {
 
     return (
 
-    <div className="container-form">
-        <h2>Create and push a Note!</h2>
-        <div className="formulary-note">
-            <form onSubmit={submitForm}>
-                {formFields.map(field => (
-                            <InputForm 
-                                key={field} 
-                                onChange={inputValue} 
-                                name={field} 
-                                value={note[field]} 
-                                label={note[field]} />
-                        ))}
-            <button type="submit"  disabled={validateForm()}  className="btn btn-primary" id="button-formulary" >Submit</button>
-            </form>
+        <div className="container-form">
+            <h2 className="title-form">Create and push a Note!</h2>
+            <div className="formulary-note">
+                <form onSubmit={submitForm}>
+                    {formFields.map(field => (
+                                <InputForm 
+                                    key={field} 
+                                    onChange={inputValue} 
+                                    name={field} 
+                                    value={note[field]} 
+                                    label={note[field]} />
+                            ))}
+                <button type="submit"  disabled={validateForm()}  className="btn btn-primary" id="button-formulary" >Submit</button>
+                </form>
+            </div>
         </div>
-    </div>
-    
-  )
+    )
 }
 export default PushNoteContainer

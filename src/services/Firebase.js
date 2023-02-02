@@ -1,19 +1,20 @@
 import { initializeApp } from "firebase/app";
 import {addDoc, collection, doc, getDoc, getDocs,  getFirestore,  query, where} from "firebase/firestore"
-import "firebase/compat/auth"
+import {getAuth} from "firebase/auth"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAYGHeAj4QnMpShFHxlMBZ4AoRMs3iHhWU",
-  authDomain: "notes-ex-b0039.firebaseapp.com",
-  projectId: "notes-ex-b0039",
-  storageBucket: "notes-ex-b0039.appspot.com",
-  messagingSenderId: "1054454370671",
-  appId: "1:1054454370671:web:5d6d0734c3ae69ac5cd89a"
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 const notesRef = collection(db, "notes")
+export const auth = getAuth(app)
 
 export async function getNotes(){
   const snapshot = await getDocs(notesRef)
