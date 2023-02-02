@@ -12,19 +12,19 @@ const NavBar = (props) => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <Link to="/newNote" className="nav-link active" aria-current="page" >New Note</Link>
-                        </li>
+                        <ul className="navbar-nav">
                         <li className="nav-item">
-                        <Link to="/category/homework" className="nav-link active" aria-current="page" >Homeworks</Link>
-                        </li>
-                        <li className="nav-item">
-                        <Link to="/category/others" className="nav-link active" >Others</Link>
-                        </li>
-                    </ul>
-                    <button onClick={() => props.handleLogOut()}>Log Out</button>
+                            <Link to="/newNote" className="nav-link active" aria-current="page" >New Note</Link>
+                            </li>
+                            <li className="nav-item">
+                            <Link to="/category/homework" className="nav-link active" aria-current="page" >Homeworks</Link>
+                            </li>
+                            <li className="nav-item">
+                            <Link to="/category/others" className="nav-link active" >Others</Link>
+                            </li>
+                        </ul>
                     </div>
+                    <button onClick={() => props.handleLogOut()} className="btn bg-light" >Log Out</button>
                 </div>
             </nav>
         </div>
