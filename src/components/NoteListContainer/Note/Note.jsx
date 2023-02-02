@@ -13,7 +13,7 @@ const Note = (props) => {
     <>
         <div className="card" style={styleCard}>
 
-            {imgs !== undefined &&  <img src={imgs} className="card-img-top" alt={imgs}/>}
+            {imgs !== undefined &&  <img src={imgs} className="card-img-top" id="img-card" alt={imgs}/>}
 
             <div className="card-body">
                 <h3 className="title-note-list">{title}</h3>

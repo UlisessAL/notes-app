@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
-import {addDoc, collection, doc, getDoc, getDocs,  getFirestore,  query, where} from "firebase/firestore"
-import {getAuth} from "firebase/auth"
+import {addDoc, collection, doc, getDoc, getDocs,  getFirestore,  query, where} from "firebase/firestore";
+import {getAuth} from "firebase/auth";
+import {getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage"
+import {v4} from "uuid"
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -12,9 +14,18 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+export const storage = getStorage(app);
 const db = getFirestore(app)
 const notesRef = collection(db, "notes")
-export const auth = getAuth(app)
+export const auth = getAuth(app);
+
+export async function uploadFile(file) {
+  const storageRef = ref(storage, v4());
+  await uploadBytes(storageRef, file);
+  const url = await getDownloadURL(storageRef)
+  console.log(url);
+  return url
+}
 
 export async function getNotes(){
   const snapshot = await getDocs(notesRef)

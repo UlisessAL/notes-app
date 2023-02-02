@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import { exportOneNote } from "../../services/Firebase";
+import { exportOneNote, uploadFile } from "../../services/Firebase";
 import InputForm from "./InputForm/InputForm";
 
 const PushNoteContainer = () => {
@@ -11,14 +11,18 @@ const PushNoteContainer = () => {
 
     let formFields = Object.keys(note);
 
-    const inputValue = (evt) => {
-        let value = evt.target.value;
+    const inputValue = async (evt) => {
         let inputName = evt.target.name;
-
+        let value = evt.target.value;
         let newState = {...note};
-
         newState[inputName] = value;
         setNote(newState);
+    }
+
+    const uploadImg = async (evt) =>{
+        // let value = await uploadFile(evt.target.files[0])
+        note.imgs = await uploadFile(evt.target.files[0])
+        console.log(note);
     }
 
     const submitForm = (evt) => {
@@ -26,6 +30,8 @@ const PushNoteContainer = () => {
         exportOneNote(note)
         navigate("/")
     }
+
+    
 
 
     const validateForm = () => {
@@ -44,8 +50,10 @@ const PushNoteContainer = () => {
                                     onChange={inputValue} 
                                     name={field} 
                                     value={note[field]} 
-                                    label={note[field]} />
+                                    label={note[field]}
+                                    />
                             ))}
+                <input type="file" onChange={uploadImg} className="form-control" id="input-img" disabled={validateForm()} />
                 <button type="submit"  disabled={validateForm()}  className="btn btn-primary" id="button-formulary" >Submit</button>
                 </form>
             </div>

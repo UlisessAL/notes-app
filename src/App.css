@@ -84,3 +84,16 @@
   color: white;
   margin-top: 200px;
 }
+
+#input-img{
+  margin-bottom: 30px;
+} 
+
+#input-img:disabled{
+  background-color: grey;
+}
+
+#img-card{
+  max-width: 500px;
+  max-height: 250px;
+}
